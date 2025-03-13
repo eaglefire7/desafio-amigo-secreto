@@ -16,7 +16,7 @@ function adicionarAmigo() {
 
     // Verifica se o nome já foi adicionado
     if (amigos.includes(nome)) {
-        alert("Este nome já foi adicionado. Insira um nome diferente.");
+        alert("Este nome já foi adicionado. Insira um nome diferente!");
         return;
     }
 
