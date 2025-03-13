@@ -1,0 +1,228 @@
+:root {
+    --color-primary: #e70a0a;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #e70a0a;
+    --color-button-hover: #e70a0aa6;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+}
+
+.main-content {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: var(--color-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Adicionar a fonte Loki Cola */
+@font-face {
+    font-family: 'Loki Cola';
+    src: url('fonts/LOKICOLA.TTF') format('truetype'); /* Caminho da fonte */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Lateral Esquerda */
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    padding: 20px;
+    color: var(--color-white);
+}
+
+.header-banner {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 72px;
+    font-family: 'Loki Cola', cursive; /* Aplica a fonte Loki Cola */
+    margin-bottom: 20px;
+}
+
+.santa-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.button-draw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-draw img {
+    margin-right: 10px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Lateral Direita */
+.right-side {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.input-section {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-name {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+.button-add {
+    padding: 10px 20px;
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border: 2px solid #000;
+    border-radius: 0 25px 25px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.name-list span {
+    background-color: var(--color-tertiary);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+.result-list {
+    margin-top: 20px;
+    color: #05DF05;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+    }
+
+    .left-side {
+        padding: 20px 0;
+    }
+
+    .main-title {
+        font-size: 36px; /* Tamanho menor para dispositivos móveis */
+    }
+
+    .santa-image {
+        max-width: 80%; /* Reduz o tamanho da imagem */
+    }
+
+    .button-draw {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-name {
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .button-add {
+        width: 100%;
+        border-radius: 25px;
+    }
+}
+
+/* Estilo para nomes já sorteados */
+.sorteado {
+    background-color: #a1a1a1; /* Cor de fundo mais escura */
+    color: #777; /* Cor do texto mais clara */
+    text-decoration: line-through; /* Tachado */
+    opacity: 0.7; /* Reduz a opacidade */
+    cursor: not-allowed; /* Cursor de "não permitido" */
+    border: 2px solid #777; /* Borda mais escura */
+}
